@@ -5,7 +5,13 @@ import os
 import sys
 
 TIDAL_STATUS_URL = "http://localhost:47837/current"
-TIDAL_CONTROL_URL = "http://localhost:47837/player"
+TIDAL_BASE_URL = "http://localhost:47837"
+
+def send_command(command):
+    try:
+        requests.get(f"{TIDAL_BASE_URL}/{command}")
+    except requests.RequestException:
+        pass
 
 def get_current_song():
     try:
@@ -22,7 +28,7 @@ def get_current_song():
 
             return f" 󰝚 {artist} - {title}"
         else:
-            return "󰝚 Paused "
+            return " 󰝚 Paused "
     except requests.RequestException:
         return ""
 
