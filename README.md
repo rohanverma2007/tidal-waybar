@@ -38,9 +38,9 @@ chmod +x tidal-waybar.py
     	"exec": "~/.config/waybar/scripts/tidal-waybar.py",
     	"interval": 5,
     	"return-type": "string",
-    	"on-click": "~/.config/waybar/scripts/tidal-waybar.py",
-    	"on-click-middle": "~/.config/waybar/scripts/tidal-waybar.py",
-    	"on-click-right": "~/.config/waybar/scripts/tidal-waybar.py"
+        "on-click": "WAYBAR_BUTTON=1 ~/.config/waybar/scripts/tidal-waybar.py",
+        "on-click-middle": "WAYBAR_BUTTON=2 ~/.config/waybar/scripts/tidal-waybar.py",
+         "on-click-right": "WAYBAR_BUTTON=3 ~/.config/waybar/scripts/tidal-waybar.py"
     },
 ```
 
